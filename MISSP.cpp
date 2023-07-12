@@ -1,21 +1,29 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
 	// your code goes here
 	int t;
-	std::cin >> t;
-	while(t--){
-	int n, ans=0;
-	cin>>n;
-	int a[n];
-	for(int i=0; i<n; i++){
-	    cin>> a[i];
-	}
-	for(int i=0; i<n; i++){
-	   ans^=a[i];
-	}
-	std::cout << ans << std::endl;
+	cin>>t;
+	for(int i = 0; i < t; i++)
+	{
+	    int n;
+	    unordered_map<string, int> m;
+	    cin>>n;
+	    for(int k =0; k<n; k++)
+	    {
+	        string doll;
+	        cin>>doll;
+	        m[doll]++;
+	    }
+	    for(auto& pair: m)
+	    {
+	        if(pair.second % 2 != 0)
+	        {
+	            cout<<pair.first<<endl;
+	            break;
+	        }
+	    }
 	}
 	return 0;
 }
